@@ -3,7 +3,6 @@ package com.lnpdit.mobilealarm.common;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 

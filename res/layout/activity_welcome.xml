@@ -14,13 +14,14 @@
 
     <TextView
         android:id="@+id/logo_text"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:layout_marginTop="20dp"
-        android:text="110视频报警"
+        android:text="通信工程设计与勘察自动化系统V1.0"
         android:textColor="@color/white"
-        android:textSize="20dp" >
+        android:textSize="18dp" >
     </TextView>
 
 </LinearLayout>

@@ -13,8 +13,6 @@
  */
 package com.lnpdit.mobilealarm.base.application;
 
-import java.util.Map;
-
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 

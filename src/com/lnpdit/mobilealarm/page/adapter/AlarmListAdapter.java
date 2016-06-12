@@ -3,7 +3,6 @@ package com.lnpdit.mobilealarm.page.adapter;
 import java.util.List;
 
 import com.lnpdit.mobilealarm.R;
-import com.lnpdit.mobilealarm.entity.AlarmList;
 import com.lnpdit.mobilealarm.entity.TransforDate;
 import com.lnpdit.mobilealarm.page.activity.alarmnote.AlarmInformationActivity;
 
@@ -71,7 +70,7 @@ public class AlarmListAdapter extends BaseAdapter {
             String type_str = appInfo.getTagName();
             String time = appInfo.getcTime();
             try{              
-                holder.type_tv.setText("事件类型："+type_str);
+                holder.type_tv.setText("勘察分类："+type_str);
                 holder.time_tv.setText("时间："+time);
                 convertView.setOnClickListener(new AdapterListener(position, appInfo));
             }catch(Exception e){

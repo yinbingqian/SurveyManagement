@@ -6,28 +6,29 @@
 
     <ImageView
         android:id="@+id/portrait_img"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/logo_icon" />
 
     <TextView
         android:id="@+id/logo_text"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/portrait_img"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Alarm"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="通信工程设计与勘察自动化系统V1.0"
         android:textColor="@color/white"
-        android:textSize="28dp" >
+        android:textSize="20dp" >
     </TextView>
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:background="#ffffff"
         android:layout_below="@+id/logo_text" >
 

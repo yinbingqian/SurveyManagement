@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.lnpdit.mobilealarm.R;
 import com.lnpdit.mobilealarm.entity.Picture;
-import com.lnpdit.mobilealarm.page.activity.networkalarm.NetwortAlarmActivity;
 
 import android.content.Context;
 import android.graphics.Color;

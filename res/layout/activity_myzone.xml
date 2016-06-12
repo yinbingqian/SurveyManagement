@@ -208,7 +208,7 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_marginTop="140dp"
-            android:background="@color/red"
+            android:background="@drawable/btn_exit_f"
             android:text="退出登录"
             android:textColor="@color/white"
             android:textSize="18dp" />

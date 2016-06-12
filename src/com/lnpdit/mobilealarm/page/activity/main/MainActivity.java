@@ -11,13 +11,13 @@ import com.lnpdit.mobilealarm.page.activity.networkalarm.NetwortAlarmActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MainActivity extends BaseActivity implements OnClickListener {
@@ -25,16 +25,17 @@ public class MainActivity extends BaseActivity implements OnClickListener {
     Context context;
 
     LinearLayout layoutlogin;
-    LinearLayout layoutphone;
+    RelativeLayout layoutphone;
     Button login_bt;
     ImageButton imageicon;
     TextView phone_tv;
     TextView alarmimg;
 
-    Button keyalarm_bt;
+//    Button keyalarm_bt;
     Button networkalarm_bt;
     Button alarmlist_bt;
     String myphone = "";
+    String nickName = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +52,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
         layoutlogin = (LinearLayout) findViewById(R.id.layoutlogin);
         layoutlogin.setClickable(true);
         layoutlogin.setOnClickListener(this);
-        layoutphone = (LinearLayout) findViewById(R.id.layoutphone);
+        layoutphone = (RelativeLayout) findViewById(R.id.layoutphone);
         layoutphone.setClickable(true);
         layoutphone.setOnClickListener(this);
         login_bt = (Button) findViewById(R.id.login_bt);
@@ -59,8 +60,8 @@ public class MainActivity extends BaseActivity implements OnClickListener {
         imageicon = (ImageButton) findViewById(R.id.imageicon);
         phone_tv = (TextView) findViewById(R.id.phone_tv);
         alarmimg = (TextView) findViewById(R.id.alarmimg);
-        keyalarm_bt = (Button) findViewById(R.id.keyalarm_bt);
-        keyalarm_bt.setOnClickListener(this);
+//        keyalarm_bt = (Button) findViewById(R.id.keyalarm_bt);
+//        keyalarm_bt.setOnClickListener(this);
         networkalarm_bt = (Button) findViewById(R.id.networkalarm_bt);
         networkalarm_bt.setOnClickListener(this);
         alarmlist_bt = (Button) findViewById(R.id.alarmlist_bt);
@@ -81,13 +82,14 @@ public class MainActivity extends BaseActivity implements OnClickListener {
         SharedPreferences sharedPreferences = getSharedPreferences("userinfo",
                 Context.MODE_PRIVATE); // 私有数据
         myphone = sharedPreferences.getString("mobileNo", "");
-        if (myphone.equals("")) {
+        nickName = sharedPreferences.getString("nickName", "");
+        if (nickName.equals("")) {
             layoutlogin.setVisibility(1);
             layoutphone.setVisibility(8);
         } else {
             layoutlogin.setVisibility(8);
             layoutphone.setVisibility(1);
-            phone_tv.setText(myphone);
+            phone_tv.setText(nickName);
         }
     }
 
@@ -99,11 +101,11 @@ public class MainActivity extends BaseActivity implements OnClickListener {
             intent_login.setClass(context, LoginActivity.class);
             startActivity(intent_login);
             break;
-        case R.id.keyalarm_bt:
-            Intent intent = new Intent(Intent.ACTION_CALL,
-                    Uri.parse("tel:" + "110"));
-            startActivity(intent);
-            break;
+//        case R.id.keyalarm_bt:
+//            Intent intent = new Intent(Intent.ACTION_CALL,
+//                    Uri.parse("tel:" + "110"));
+//            startActivity(intent);
+//            break;
         case R.id.networkalarm_bt:
             if (myphone.equals("")) {
                 Intent intent_login3 = new Intent();

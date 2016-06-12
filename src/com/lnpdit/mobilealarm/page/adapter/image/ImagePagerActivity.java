@@ -2,10 +2,10 @@ package com.lnpdit.mobilealarm.page.adapter.image;
 
 import java.util.ArrayList;
 
+import com.lnpdit.mobilealarm.R;
 import com.lnpdit.mobilealarm.utils.image.HackyViewPager;
 import com.lnpdit.mobilealarm.utils.image.ImageDetailFragment;
 
-import com.lnpdit.mobilealarm.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;

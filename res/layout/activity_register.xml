@@ -63,6 +63,38 @@
         android:layout_height="1dp"
         android:background="@color/line"
         android:alpha="0.1"/>
+     <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical" 
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:id="@+id/nickname_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="用  户  名："
+            android:textColor="@color/setting_text_color"
+            android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/nickname_et"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/edittext_background"
+                android:layout_toRightOf="@+id/nickname_tv"/>
+
+    </RelativeLayout>
+    <View 
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/line"
+        android:alpha="0.1"/>
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="45dp"
@@ -136,8 +168,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
                 android:layout_gravity="center_vertical"

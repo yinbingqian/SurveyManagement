@@ -22,6 +22,7 @@ public class MyZoneActivity extends BaseActivity {
     private TextView username_tv;
     Context context;
     String mobileNo;
+    String nickName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class MyZoneActivity extends BaseActivity {
         SharedPreferences sharedPreferences= getSharedPreferences("userinfo", 
                 Activity.MODE_PRIVATE); 
         mobileNo =sharedPreferences.getString("mobileNo", ""); 
+        nickName =sharedPreferences.getString("nickName", ""); 
         layout_update = (RelativeLayout) findViewById(R.id.layout_update);
         layout_update.setClickable(true);
         layout_update.setOnClickListener(this);
@@ -49,7 +51,7 @@ public class MyZoneActivity extends BaseActivity {
         layout_modifypwd.setClickable(true);
         layout_modifypwd.setOnClickListener(this);
         username_tv = (TextView) findViewById(R.id.username_tv);
-        username_tv.setText(mobileNo);
+        username_tv.setText(nickName);
         back_bt = (Button) findViewById(R.id.back_bt);
         back_bt.setOnClickListener(this);
         logout_bt = (Button) findViewById(R.id.logout_bt);
@@ -79,6 +81,7 @@ public class MyZoneActivity extends BaseActivity {
         Editor editor = sp.edit();
         editor.putString("Id", "");
         editor.putString("mobileNo","" );
+        editor.putString("nickName","" );
         editor.putString("passWd","");
         editor.putString("sex", "");
         editor.putString("hdPhoto", "");

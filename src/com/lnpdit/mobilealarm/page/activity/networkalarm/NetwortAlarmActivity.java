@@ -373,7 +373,7 @@ public class NetwortAlarmActivity extends BaseActivity
                 }
             }
         });
-        video_rb.setChecked(true);
+        pic_rb.setChecked(true);
         // 视频相关控件
 
         video_display_layout = (LinearLayout) findViewById(
@@ -451,6 +451,8 @@ public class NetwortAlarmActivity extends BaseActivity
         // TODO Auto-generated method stub
         switch (v.getId()) {
         case R.id.send_bt:
+//            try {
+           
             // 获取选中的标签
             send_bt.setEnabled(false);
             String res = "";
@@ -518,11 +520,17 @@ public class NetwortAlarmActivity extends BaseActivity
                 mRecordPath = mRecordPath==null?"":mRecordPath;
             
             
-            if (Pic1.equals("") && text_et.getText().toString().trim().equals("") && path_video.equals("") && mRecordPath.equals("")) {
-                Toast.makeText(context, "请选择文本、图片、音频、视频中至少一项输入",
-                        Toast.LENGTH_SHORT).show();
-                return;
-            }
+//            if (Pic1.equals("") && text_et.getText().toString().trim().equals("") && path_video.equals("") && mRecordPath.equals("")) {
+//                Toast.makeText(context, "请选择文本、图片、音频、视频中至少一项输入",
+//                        Toast.LENGTH_SHORT).show();
+//                return;
+//            } 
+                if (Pic1.equals("") && text_et.getText().toString().trim().equals("") ) {
+              Toast.makeText(context, "请选择文本、图片中至少一项输入",
+              Toast.LENGTH_SHORT).show();
+            return;
+           }
+                
             if (Bimp.drr.size() > 0) {
               new FileUploadPic().execute(Bimp.drr.get(0));
           }
@@ -566,7 +574,11 @@ public class NetwortAlarmActivity extends BaseActivity
             progressDialog.setMessage(stri);
             progressDialog.setCanceledOnTouchOutside(false);
             progressDialog.show();
-
+            
+//            } catch (Exception e) {
+//                // TODO: handle exception
+//                Toast.makeText(context, "录入信息异常，请返回首页重新进入", Toast.LENGTH_SHORT).show();
+//            }
 //            progressDialog.dismiss();
             
 //            finish();
@@ -694,7 +706,7 @@ public String getName(String path_){
                 progressDialog.dismiss();
                 if (res.getObj().toString().equals("ok")) {
 
-                  Toast.makeText(context, "报警提交成功",Toast.LENGTH_SHORT).show();
+                  Toast.makeText(context, "勘察信息上传成功",Toast.LENGTH_SHORT).show();
 
                     DBHelper dbh = new DBHelper(context);
                     TransforDate td = new TransforDate();
@@ -740,7 +752,7 @@ public String getName(String path_){
                     finish();
                 } else if (res.getObj().toString().equals("false")) {
 
-                    Toast.makeText(context, "网络报警失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "勘察信息上传失败", Toast.LENGTH_SHORT).show();
                 }
 
             }

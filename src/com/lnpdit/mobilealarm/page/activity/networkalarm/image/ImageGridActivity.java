@@ -9,12 +9,10 @@ import com.lnpdit.mobilealarm.R;
 import com.lnpdit.mobilealarm.entity.image.AlbumHelper;
 import com.lnpdit.mobilealarm.entity.image.Bimp;
 import com.lnpdit.mobilealarm.entity.image.ImageItem;
-import com.lnpdit.mobilealarm.page.activity.networkalarm.NetwortAlarmActivity;
 import com.lnpdit.mobilealarm.page.adapter.image.ImageGridAdapter;
 import com.lnpdit.mobilealarm.page.adapter.image.ImageGridAdapter.TextCallback;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;

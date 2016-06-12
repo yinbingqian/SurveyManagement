@@ -3,17 +3,14 @@ package com.lnpdit.mobilealarm.page.activity.myzone;
 import com.lnpdit.mobilealarm.R;
 import com.lnpdit.mobilealarm.base.component.BaseActivity;
 import com.lnpdit.mobilealarm.http.RdaResultPack;
-import com.lnpdit.mobilealarm.md5.MD5Plus;
 import com.lnpdit.mobilealarm.utils.SOAP_UTILS;
 import com.lnpdit.mobilealarm.webservice.SoapRes;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;

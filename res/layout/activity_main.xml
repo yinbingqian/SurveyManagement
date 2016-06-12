@@ -16,10 +16,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:text="Alarm"
+            android:layout_marginLeft="6dp"
+            android:text="通信工程设计与勘察自动化系统V1.0"
             android:textColor="@color/white"
-            android:textSize="22dp" />
+            android:textSize="17dp" />
 
         <LinearLayout
             android:id="@+id/layoutlogin"
@@ -32,62 +32,40 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="5dp"
                 android:background="@null"
                 android:text="登录"
             android:textSize="18dp"
                 android:textColor="@color/white" />
         </LinearLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/layoutphone"
-            android:layout_width="wrap_content"
+            android:layout_width="85dp"
             android:layout_height="fill_parent"
             android:layout_alignParentRight="true"
-            android:orientation="horizontal"
+            android:gravity="center_vertical"
             android:visibility="gone" >
-
+          <ImageButton
+                android:id="@+id/imageicon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/personal" />
             <TextView
                 android:id="@+id/phone_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:textColor="@color/white"
+                android:layout_toLeftOf="@+id/imageicon"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="2dp"
+                android:text="倩倩倩"
                 android:textSize="16dp" />
 
-            <ImageButton
-                android:id="@+id/imageicon"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/personal" />
-        </LinearLayout>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="1" >
-
-        <Button
-            android:id="@+id/keyalarm_bt"
-            android:layout_width="125dp"
-            android:layout_height="125dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/btn_akey_alarm_f" />
-        <TextView 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="一键报警"
-            android:textSize="18dp"
-            android:textColor="@color/white"
-            android:layout_marginTop="5dp"
-            android:layout_centerInParent="true"
-            android:layout_below="@+id/keyalarm_bt"
-            />
+       
+        </RelativeLayout>
     </RelativeLayout>
 
     <RelativeLayout
@@ -98,15 +76,16 @@
 
         <Button
             android:id="@+id/networkalarm_bt"
-            android:layout_width="125dp"
-            android:layout_height="125dp"
-            android:background="@drawable/btn_internet_alarm_f"/>
+            android:layout_width="135dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/internet_alarm"/>
         <TextView 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textSize="18dp"
-            android:text="网络报警"
+            android:textSize="20dp"
+            android:text="勘察上传"
+            android:layout_marginTop="15dp"
             android:textColor="@color/white"
             android:layout_centerInParent="true"
             android:layout_below="@+id/networkalarm_bt"
@@ -121,15 +100,15 @@
 
         <Button
             android:id="@+id/alarmlist_bt"
-            android:layout_width="125dp"
-            android:layout_height="125dp"
-            android:background="@drawable/btn_history_alarm_f"/>
+            android:layout_width="135dp"
+            android:layout_height="135dp"
+            android:background="@drawable/history_alarm"/>
          <TextView 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="历史报警"
-            android:textSize="18dp"
+            android:layout_marginTop="15dp"
+            android:text="历史数据"
+            android:textSize="20dp"
             android:textColor="@color/white"
             android:layout_centerInParent="true"
             android:layout_below="@+id/alarmlist_bt"
@@ -137,5 +116,5 @@
     </RelativeLayout>
 <View 
     android:layout_width="fill_parent"
-    android:layout_height="15dp"/>
+    android:layout_height="40dp"/>
 </LinearLayout>

@@ -46,7 +46,8 @@ public class SOAP_UTILS {
 //    public static final String IP_SIMPLE = "221.180.149.201";
 //    public static final String IP = "http://200.20.30.130:7799";
 //    public static final String IP = "http://200.20.32.120:7799";
-    public static final String IP = "http://123.57.56.70:7799";
+    public static final String IP = "http://123.57.56.70:6699";
+//    public static final String IP = "http://123.57.56.70:7799";
 //    public static final String IP = "http://200.20.31.81:7799";
 //    public static final String IP = "http://200.20.30.126:7799";
     

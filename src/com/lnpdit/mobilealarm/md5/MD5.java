@@ -1,6 +1,5 @@
 package com.lnpdit.mobilealarm.md5;
 
-import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 

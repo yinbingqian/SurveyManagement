@@ -1,8 +1,8 @@
 package com.lnpdit.mobilealarm.utils;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.app.AlertDialog.Builder;
+import android.app.ProgressDialog;
 import android.view.Gravity;
 import android.widget.TextView;
 

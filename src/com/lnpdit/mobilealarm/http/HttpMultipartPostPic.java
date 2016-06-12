@@ -14,10 +14,8 @@ import org.apache.http.util.EntityUtils;
 import com.lnpdit.mobilealarm.http.CustomMultipartEntity.ProgressListener;
 import com.lnpdit.mobilealarm.utils.SOAP_UTILS;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.widget.Toast;
 
 public class HttpMultipartPostPic extends AsyncTask<String, Integer, String> {
 

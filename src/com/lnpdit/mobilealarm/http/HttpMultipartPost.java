@@ -13,10 +13,8 @@ import org.apache.http.util.EntityUtils;
 
 import com.lnpdit.mobilealarm.http.CustomMultipartEntity.ProgressListener;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.widget.Toast;
 
 public class HttpMultipartPost extends AsyncTask<String, Integer, String> {
 

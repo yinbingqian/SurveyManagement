@@ -22,6 +22,7 @@ import android.widget.Toast;
 public class RegisterActivity extends BaseActivity implements OnClickListener {
     Context context;
     EditText phone_et;
+    EditText nickname_et;
     EditText pwd_et;
     EditText repwd_et;
     EditText code_et;
@@ -66,6 +67,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
         register_bt = (Button) findViewById(R.id.register_bt);
         register_bt.setOnClickListener(this);
         phone_et = (EditText) findViewById(R.id.phone_et);
+        nickname_et = (EditText) findViewById(R.id.nickname_et);
         pwd_et = (EditText) findViewById(R.id.pwd_et);
         repwd_et = (EditText) findViewById(R.id.repwd_et);
         code_et = (EditText) findViewById(R.id.code_et);
@@ -86,6 +88,11 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
                     || phone_et.getText() == null
                     || phone_et.getText().equals("")) {
               Toast.makeText(context, "手机号码错误",Toast.LENGTH_SHORT).show();
+                break;
+            }
+            // 昵称校验
+            if (nickname_et.getText().equals("")) {
+                Toast.makeText(context, "请输入昵称",Toast.LENGTH_SHORT).show();
                 break;
             }
             // 验证码校验
@@ -109,7 +116,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
                 break;
             }
 
-            Object[] property_va = { phone_et.getText().toString(),pwd_et.getText().toString(),sex,
+            Object[] property_va = { phone_et.getText().toString(),nickname_et.getText().toString(),pwd_et.getText().toString(),sex,
                     code_et.getText().toString(), };
             soapService.AddUsers(property_va);
             break;
@@ -247,6 +254,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
                     if (res.getObj().toString().equals("ok")) {
 
                       Toast.makeText(context, "注册成功",Toast.LENGTH_SHORT).show();
+                      finish();
                     }else if (res.getObj().toString().equals("false")) {
 
                         Toast.makeText(context, "注册失败",Toast.LENGTH_SHORT).show();
@@ -274,6 +282,9 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
                     } else if (res.getObj().toString().equals("400")) {
                         Toast.makeText(context, "非法IP访问",
                                 Toast.LENGTH_SHORT).show();
+                    }  else if (res.getObj().toString().equals("4051")) {
+//                        Toast.makeText(context, "非法IP访问",
+//                                Toast.LENGTH_SHORT).show();
                     }
                 }
             } 

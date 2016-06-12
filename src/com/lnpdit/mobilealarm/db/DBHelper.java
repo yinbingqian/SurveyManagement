@@ -1,11 +1,8 @@
 package com.lnpdit.mobilealarm.db;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
-import com.lnpdit.mobilealarm.entity.LoginUser;
 import com.lnpdit.mobilealarm.entity.TransforDate;
 
 import android.content.ContentValues;

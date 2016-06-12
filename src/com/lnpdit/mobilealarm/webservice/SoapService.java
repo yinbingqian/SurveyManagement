@@ -34,6 +34,8 @@ public class SoapService implements ISoapService {
                     loginUser.setId(soapchildsss.getProperty("Id").toString());
                     loginUser.setMobileNo(soapchildsss.getProperty("mobileNo")
                             .toString());
+                    loginUser.setNickName(soapchildsss.getProperty("nickName")
+                            .toString());
                     loginUser.setPassWd(soapchildsss.getProperty("passWd").toString());
                     loginUser.setSex(soapchildsss.getProperty("sex")
                             .toString());
@@ -60,7 +62,7 @@ public class SoapService implements ISoapService {
 
 	   @Override
 	    public void AddUsers(Object[] property_va) {
-	        String[] property_nm = { "mobileNo", "passWd" ,"sex","code"};
+	        String[] property_nm = { "mobileNo", "nickName","passWd" ,"sex","code"};
 	        asynTaskBase.setMethod(SOAP_UTILS.METHOD.ADDUSERS);
 	        asynTaskBase.setProperty_nm(property_nm);
 	        asynTaskBase.setProperty_va(property_va);
@@ -92,30 +94,12 @@ public class SoapService implements ISoapService {
 	        asynTaskBase.executeDo(new SoapObjectResult() {
 
 	            @Override
-	            public void soapResult(SoapObject obj) {
-	                LoginUser loginUser = null;
-	                SoapObject soapchild = (SoapObject) obj.getProperty(0);
-	                SoapObject soapchilds = (SoapObject) soapchild.getProperty(1);
-	                SoapObject soapchildss = (SoapObject) soapchilds.getProperty(0);
-	                SoapObject soapchildsss = (SoapObject) soapchildss.getProperty(0);
-	                    loginUser = new LoginUser();
-	                    loginUser.setId(soapchildsss.getProperty("Id").toString());
-	                    loginUser.setMobileNo(soapchildsss.getProperty("mobileNo")
-	                            .toString());
-	                    loginUser.setPassWd(soapchildsss.getProperty("passWd").toString());
-	                    loginUser.setSex(soapchildsss.getProperty("sex")
-	                            .toString());
-	                    loginUser.setHdPhoto(soapchildsss.getProperty(
-	                            "hdPhoto").toString());
-	                    loginUser.setIslock(soapchildsss.getProperty("islock")
-	                            .toString());
-	                    loginUser.setCrTime(soapchildsss.getProperty("crTime")
-	                            .toString());
-	                
-	                soapRes.setObj(loginUser);
-	                soapRes.setCode(SOAP_UTILS.METHOD.SETIDENTIFYCODE);
-	                EventCache.commandActivity.post(soapRes);
-	            }
+                public void soapResult(SoapObject obj) {
+                    soapRes.setObj(obj.getProperty("SetIdentifyCodeResult"));
+                    System.out.println(">>>>CODE  :　" + obj.toString());
+                    soapRes.setCode(SOAP_UTILS.METHOD.SETIDENTIFYCODE);
+                    EventCache.commandActivity.post(soapRes);
+                }
 
 	            @Override
 	            public void soapError() {
@@ -143,6 +127,8 @@ public class SoapService implements ISoapService {
                         loginUser = new LoginUser();
                         loginUser.setId(soapchildsss.getProperty("Id").toString());
                         loginUser.setMobileNo(soapchildsss.getProperty("mobileNo")
+                                .toString());
+                        loginUser.setNickName(soapchildsss.getProperty("nickName")
                                 .toString());
                         loginUser.setPassWd(soapchildsss.getProperty("passWd").toString());
                         loginUser.setSex(soapchildsss.getProperty("sex")

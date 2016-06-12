@@ -4,7 +4,6 @@ import com.lnpdit.mobilealarm.R;
 import com.lnpdit.mobilealarm.base.component.BaseActivity;
 import com.lnpdit.mobilealarm.entity.LoginUser;
 import com.lnpdit.mobilealarm.http.RdaResultPack;
-import com.lnpdit.mobilealarm.md5.MD5Plus;
 import com.lnpdit.mobilealarm.utils.SOAP_UTILS;
 import com.lnpdit.mobilealarm.webservice.SoapRes;
 
@@ -96,7 +95,7 @@ public class ForgetPwdActivity extends BaseActivity {
                     break;
                 }
 
-                Object[] property_va = { phone_et.getText().toString(),MD5Plus.stringToMD5(pwd_et.getText().toString()),
+                Object[] property_va = { phone_et.getText().toString(),pwd_et.getText().toString(),
                         code_et.getText().toString(), };
                 soapService.updateByCode(property_va);
 //              intent.putExtra("sim", actv_phone.getText().toString());
@@ -186,9 +185,11 @@ public class ForgetPwdActivity extends BaseActivity {
             if (res.getCode().equals(SOAP_UTILS.METHOD.SETIDENTIFYCODE_RESETPWD)) {
                 if (res.getObj() != null) {
                     if (res.getObj().toString().equals("2")) {
+                      
                         checkTimer = new CheckTimer();
                         Thread thread = new Thread(checkTimer);
                         thread.start();
+                        
                     } else if (res.getObj().toString().equals("0")) {
                         Toast.makeText(context, "验证码请求失败",
                                 Toast.LENGTH_SHORT).show();
@@ -199,7 +200,7 @@ public class ForgetPwdActivity extends BaseActivity {
                         Toast.makeText(context, "用户不存在",
                                 Toast.LENGTH_SHORT).show();
                     }else if(res.getObj().toString().equals("4051")){
-                        Toast.makeText(context, "验证码已发送，请稍等",
+                        Toast.makeText(context, "验证码发送失败",
                                 Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -214,6 +215,9 @@ public class ForgetPwdActivity extends BaseActivity {
                        
                     } else if (userid.equals("-2")) {
                         Toast.makeText(context, "验证码错误，请检查信息后重新提交", Toast.LENGTH_SHORT).show();
+
+                    } else if (userid.equals("0")) {
+                        Toast.makeText(context, "找回密码失败", Toast.LENGTH_SHORT).show();
 
                     }else{
 

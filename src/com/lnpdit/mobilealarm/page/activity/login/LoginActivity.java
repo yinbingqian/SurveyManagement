@@ -5,7 +5,6 @@ import com.lnpdit.mobilealarm.base.component.BaseActivity;
 import com.lnpdit.mobilealarm.entity.LoginUser;
 import com.lnpdit.mobilealarm.http.RdaResultPack;
 import com.lnpdit.mobilealarm.md5.MD5Plus;
-import com.lnpdit.mobilealarm.page.activity.main.MainActivity;
 import com.lnpdit.mobilealarm.page.activity.register.ForgetPwdActivity;
 import com.lnpdit.mobilealarm.page.activity.register.RegisterActivity;
 import com.lnpdit.mobilealarm.utils.SOAP_UTILS;
@@ -128,6 +127,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
                         Editor editor = sp.edit();
                         editor.putString("Id", loginUser.getId());
                         editor.putString("mobileNo", loginUser.getMobileNo());
+                        editor.putString("nickName", loginUser.getNickName());
                         editor.putString("passWd", loginUser.getPassWd());
                         editor.putString("sex", loginUser.getSex());
                         editor.putString("hdPhoto", loginUser.getHdPhoto());

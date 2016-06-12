@@ -2,7 +2,8 @@ package com.lnpdit.mobilealarm.entity;
 
 public class LoginUser {
 	private String Id; // 用户id
-	private String mobileNo;// 用户名
+	private String mobileNo;// 用户手机号码
+	private String nickName;// 用户昵称
 	private String passWd;// 用户密码
 	private String sex;// 用户性别
 	private String hdPhoto ;// 头像
@@ -19,6 +20,13 @@ public class LoginUser {
     }
     public void setMobileNo(String mobileNo) {
         this.mobileNo = mobileNo;
+    }
+    
+    public String getNickName() {
+        return nickName;
+    }
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
     public String getPassWd() {
         return passWd;
